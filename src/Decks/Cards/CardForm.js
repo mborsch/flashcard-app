@@ -25,6 +25,7 @@ export function CardForm({
           rows="3"
           value={cardFront()}
           onChange={changeFront}
+          required={true}
         ></textarea>
       </div>
       <div className="form-group">
@@ -35,6 +36,7 @@ export function CardForm({
           rows="3"
           value={cardBack()}
           onChange={changeBack}
+          required={true}
         ></textarea>
       </div>
       <button

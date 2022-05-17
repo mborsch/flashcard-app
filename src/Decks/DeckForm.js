@@ -27,6 +27,7 @@ export function DeckForm({
           id="name"
           value={deckName()}
           onChange={changeName}
+          required={true}
         ></input>
       </div>
       <div className="form-group">
@@ -37,6 +38,7 @@ export function DeckForm({
           rows="3"
           value={deckDescription()}
           onChange={changeDescription}
+          required={true}
         ></textarea>
       </div>
       <button
