@@ -1,4 +1,4 @@
-This project was created for a Thinkful Capstone Project. I used React to create a flashcard app. This app allows you to create your own deck, create cards for the deck, and study the deck. You can also study and view the existing decks. This app has been deployed using Vercel at https://flashcard-app-tau.vercel.app
+This project was created for a Thinkful Capstone Project. I used React to create a flashcard app. This app allows you to create your own deck, create cards for the deck, and study the deck. You can also study and view the existing decks. 
 
 # Getting Started with Create React App
 
