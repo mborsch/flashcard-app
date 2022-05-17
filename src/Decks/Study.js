@@ -60,7 +60,7 @@ export function Study({ decks }) {
 
   function ifNextButton() {
     return studyState.flipped ? (
-      <button className="btn-warning btn" onClick={nextCard}>
+      <button className="btn btn-primary" onClick={nextCard}>
         Next
       </button>
     ) : null;
