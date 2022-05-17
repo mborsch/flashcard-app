@@ -112,7 +112,7 @@ export function Study({ decks }) {
         <div className="card-body">
           <h6>Card {numberOfCardsLeft()}</h6>
           <p className="card-text">{determineSide()}</p>
-          <button className="btn btn-primary" onClick={controlFlip}>
+          <button className="btn btn-secondary" onClick={controlFlip}>
             Flip
           </button>
           {ifNextButton()}
