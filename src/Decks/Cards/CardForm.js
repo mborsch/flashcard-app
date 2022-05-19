@@ -8,13 +8,18 @@ export function CardForm({
   changeBack,
 }) {
   const history = useHistory();
+
+  //for front value
   function cardFront() {
     return card.front ? card.front : "";
   }
+
+  //for back value
   function cardBack() {
     return card.back ? card.back : "";
   }
 
+  //card's form
   return (
     <form>
       <div className="form-group">

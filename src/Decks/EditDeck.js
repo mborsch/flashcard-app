@@ -12,6 +12,7 @@ export function EditDeck() {
     description: "",
   });
 
+  //updates deck state when deckId changes
   useEffect(() => {
     async function loadDecks() {
       const loaded = await readDeck(deckId);
@@ -20,15 +21,18 @@ export function EditDeck() {
     loadDecks();
   }, [deckId]);
 
+  //submit handler to update the deck
   function submitHandler(event) {
     event.preventDefault();
     updateDeck(deck).then((output) => history.push(`/decks/${output.id}`));
   }
 
+  //changes name
   function changeName(event) {
     setDeck({ ...deck, name: event.target.value });
   }
 
+  //changes description
   function changeDescription(event) {
     setDeck({ ...deck, description: event.target.value });
   }

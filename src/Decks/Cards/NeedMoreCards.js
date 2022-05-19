@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//function to show that a deck does not have enough cards
 export function NeedMoreCards({ deck }) {
   if (!deck) {
     return <p>Loading...</p>;

@@ -11,6 +11,7 @@ export function ViewDeck() {
     cards: [],
   });
 
+  //updates deck when deckId changs
   useEffect(() => {
     async function loadDecks() {
       const loaded = await readDeck(deckId);
@@ -19,16 +20,19 @@ export function ViewDeck() {
     loadDecks();
   }, [deckId]);
 
+  //loading screen if there's no deck
   if (!deck) {
     return <p>Loading...</p>;
   }
 
+  //delete handler for card that reloads current page
   function deleteCardHandler(cardId) {
     if (window.confirm("Delete Card? This action can not be undone")) {
       deleteCard(cardId).then((output) => history.go(0));
     }
   }
 
+  //delete handler for deck that returns to home screen
   function deleteDeckHandler(deckId) {
     if (window.confirm("Delete Deck? This action can not be undone")) {
       deleteDeck(deckId);
@@ -36,6 +40,7 @@ export function ViewDeck() {
     }
   }
 
+  //cards mapping
   const cardList = deck.cards.map((card) => (
     <div className="card w-100" key={card.id}>
       <div className="card-body">

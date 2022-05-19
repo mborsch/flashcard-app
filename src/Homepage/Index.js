@@ -4,6 +4,7 @@ import { Decks } from "../Decks/Decks";
 import { CreateButton } from "./CreateButton";
 import { DeckList } from "./DeckList";
 
+//homepage routing
 export function Homepage({ decks }) {
   return (
     <div>

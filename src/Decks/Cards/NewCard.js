@@ -15,6 +15,7 @@ export function NewCard() {
   const [card, setCard] = useState({ ...initializeForm });
   const [deck, setDeck] = useState({});
 
+  //updates the deck when deckId changes
   useEffect(() => {
     async function loadDeck() {
       const loaded = await readDeck(deckId);
@@ -23,15 +24,23 @@ export function NewCard() {
     loadDeck();
   }, [deckId]);
 
+  //changes the front of the card
   function changeFront(event) {
     setCard({ ...card, front: event.target.value });
   }
+
+  //changes the back of the card
   function changeBack(event) {
     setCard({ ...card, back: event.target.value });
   }
 
+  //submit handler with validation and an async function to update the card data
   function submitHandler(event) {
     event.preventDefault();
+    if (card.front === "" || card.back === "") {
+      window.alert("please add a front and back to card");
+      throw "please add a front and back to card";
+    }
     async function updateData() {
       await createCard(deckId, card);
       setCard({ ...initializeForm });

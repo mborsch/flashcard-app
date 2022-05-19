@@ -17,6 +17,7 @@ export function Study({ decks }) {
     flipped: false,
   });
 
+  //updates deck state with deckId changes and sets the study state
   useEffect(() => {
     async function loadDecks() {
       const loadedDeck = await readDeck(deckId);
@@ -32,10 +33,12 @@ export function Study({ decks }) {
     loadDecks();
   }, [deckId]);
 
+  //loading screen in case deck doesn't load
   if (!deck) {
     return <p>Loading...</p>;
   }
 
+  //validates the deck has at least 3 cards
   if (studyState.cards.length < 3) {
     return <NeedMoreCards deck={deck} />;
   }
@@ -48,16 +51,19 @@ export function Study({ decks }) {
     });
   }
 
+  //if front is true, show front, otherwise show back
   function determineSide() {
     return studyState.front
       ? studyState.cards[studyState.currentCard].front
       : studyState.cards[studyState.currentCard].back;
   }
 
+  //shows how many cards are left
   function numberOfCardsLeft() {
     return `${studyState.currentCard + 1} of ${studyState.cardMax}`;
   }
 
+  //next button shows up after card has been flipped
   function ifNextButton() {
     return studyState.flipped ? (
       <button className="btn btn-primary" onClick={nextCard}>
@@ -66,10 +72,13 @@ export function Study({ decks }) {
     ) : null;
   }
 
+  //determines if on the last card of the study session
   function atMax() {
     return studyState.currentCard >= studyState.cardMax - 1;
   }
 
+  //if on last card, window.confirm to start over, bringing studyState back to beginning,
+  //if not last card, move onto the next card
   function nextCard() {
     if (atMax()) {
       if (window.confirm("Start Over?")) {

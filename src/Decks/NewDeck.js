@@ -11,15 +11,22 @@ export function NewDeck() {
     description: "",
   });
 
+  //submit handler with validation
   function submitHandler(event) {
     event.preventDefault();
+    if (deck.name === "" || deck.description === "") {
+      window.alert("please enter a name and description");
+      throw "please enter a name and description";
+    }
     createDeck(deck).then((output) => history.push(`/decks/${output.id}`));
   }
 
+  //creates name
   function changeName(event) {
     setDeck({ ...deck, name: event.target.value });
   }
 
+  //creates description
   function changeDescription(event) {
     setDeck({ ...deck, description: event.target.value });
   }

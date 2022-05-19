@@ -5,6 +5,7 @@ import { deleteDeck } from "../utils/api";
 export function DeckList({ decks }) {
   const history = useHistory();
 
+  //delete deck and reload page
   function deleteHandler(deckId) {
     if (
       window.confirm(
@@ -15,6 +16,7 @@ export function DeckList({ decks }) {
     }
   }
 
+  //deck mapper
   const mapDecks = decks.map((deck, index) => (
     <div className="card w-100" key={index}>
       <div className="card-body">

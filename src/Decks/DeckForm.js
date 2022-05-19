@@ -9,10 +9,12 @@ export function DeckForm({
 }) {
   const history = useHistory();
 
+  //for name value
   function deckName() {
     return deck.name ? deck.name : "";
   }
 
+  //for description value
   function deckDescription() {
     return deck.description ? deck.description : "";
   }

@@ -6,6 +6,7 @@ import { Study } from "./Study";
 import { ViewDeck } from "./ViewDeck";
 import { Cards } from "./Cards";
 
+//routes for decks
 export function Decks({ decks }) {
   return (
     <div>

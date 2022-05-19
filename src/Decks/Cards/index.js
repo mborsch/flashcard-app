@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { EditCard } from "./EditCard";
 import { NewCard } from "./NewCard";
 
+//routing for cards
 export function Cards() {
   return (
     <div>

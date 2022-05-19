@@ -15,6 +15,7 @@ export function EditCard() {
   });
   const [deckName, setDeckName] = useState("");
 
+  //useEffect to load card's data and load the deckname, with dependency array on cardId and deckId
   useEffect(() => {
     async function loadCard() {
       const loaded = await readCard(cardId);
@@ -34,17 +35,23 @@ export function EditCard() {
     loadDeckName();
   }, [cardId, deckId]);
 
+  //changes card front
   function changeFront(event) {
     setCard({ ...card, front: event.target.value });
   }
+
+  //changes card back
   function changeBack(event) {
     setCard({ ...card, back: event.target.value });
   }
+
+  //submit handler to update the card
   function submitHandler(event) {
     event.preventDefault();
     updateCard(card).then((output) => history.push(`/decks/${output.deckId}`));
   }
 
+  //edit card layout with CardForm function
   return (
     <div>
       <nav aria-label="breadcrumb">
