@@ -39,7 +39,6 @@ export function NewCard() {
     event.preventDefault();
     if (card.front === "" || card.back === "") {
       window.alert("please add a front and back to card");
-      throw "please add a front and back to card";
     }
     async function updateData() {
       await createCard(deckId, card);
