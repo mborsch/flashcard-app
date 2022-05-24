@@ -1,4 +1,7 @@
-This project was created for a Thinkful Capstone Project. I used React to create a flashcard app. This app allows you to create your own deck, create cards for the deck, and study the deck. You can also study and view the existing decks. 
+This project was created for a Thinkful Capstone Project.
+I really love using Quizlet and Flashcards to learn so I was excited to create my own version to utilize.
+I used React to create the app. This app allows you to create your own deck, create cards for the deck, and study the deck. You can also study and view the existing decks. 
+I plan to improve the user interface and create a sleeker app that has more features while remaining flawless in user experience.
 
 # Getting Started with Create React App
 
